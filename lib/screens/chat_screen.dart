@@ -606,8 +606,8 @@ Future<void> _openAttachment(BlousabMessage message) async {
 }
 
 void _scrollToBottom() {
-WidgetsBinding.instance.addPostFrameCallback(() {
-if (!_scrollController.hasClients) return;
+WidgetsBinding.instance.addPostFrameCallback((_) {
+  if (!_scrollController.hasClients) return;
 
   _scrollController.animateTo(
     _scrollController.position.maxScrollExtent,
