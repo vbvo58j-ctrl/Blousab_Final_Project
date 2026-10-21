@@ -136,6 +136,7 @@ class LocalNetworkService {
   void _acceptClient(Socket socket) {
     final address = socket.remoteAddress.address;
     socket
+        .cast<List<int>>()
         .transform(utf8.decoder)
         .transform(const LineSplitter())
         .listen((line) {
